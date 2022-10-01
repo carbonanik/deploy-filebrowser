@@ -10,7 +10,7 @@ pipeline {
         }
         stage('start filebrowser') {
             steps {
-'''
+                sh '''
 docker run \
     --name filebrowser \
     --network=behind-nginx-network \
@@ -23,7 +23,7 @@ docker run \
     -p 8070:80 \
     -d \
     filebrowser/filebrowser:s6
-'''
+                '''
             }
         }
     }
