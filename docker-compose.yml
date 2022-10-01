@@ -3,7 +3,7 @@ version: "3"
 services:
     filebrowser:
         build: ./image
-        user: "${UID}:${GID}"
+        # user: "${UID}:${GID}"
         ports:
             - 8585:80
         volumes:
