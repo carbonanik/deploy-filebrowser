@@ -1,0 +1,2 @@
+--to copy the database.db from running container
+sudo docker cp filebrowser:/database.db /database.db
