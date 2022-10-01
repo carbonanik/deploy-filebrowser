@@ -7,8 +7,8 @@ services:
         ports:
             - 8070:80
         environment:
-            - PUID=$(id -u)
-            - PGID=$(id -g)
+            - PUID=$$(id -u)
+            - PGID=$$(id -g)
         volumes:
             - /:/srv
             - /data/filebrowser/database:/database/
