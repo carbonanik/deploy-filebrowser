@@ -24,6 +24,9 @@ networks:
             name: behind-nginx-network
 
 # docker run \
+#     --name filebrowser \
+#     --network=behind-nginx-network \
+#     --restart unless-stopped \
 #     -v /:/srv \
 #     -v /data/filebrowser/database:/database/ \
 #     -v /data/filebrowser/config:/config/ \
