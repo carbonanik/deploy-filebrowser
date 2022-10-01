@@ -2,12 +2,14 @@ version: "3"
 
 services:
     filebrowser:
-        build: ./image
+        image: filebrowser/filebrowser:s6
         # user: "${UID}:${GID}"
         ports:
-            - 8585:80
+            - 8070:80
         volumes:
             - /:/srv
+            - /data/filebrowser/database:/database/
+            - /data/filebrowser/config:/config/
         restart: always
         networks:
             - behind-nginx
@@ -17,3 +19,13 @@ networks:
     behind-nginx:
         external:
             name: behind-nginx-network
+
+# docker run \
+#     -v /:/srv \
+#     -v /data/filebrowser/database:/database/ \
+#     -v /data/filebrowser/config:/config/ \
+#     -e PUID=$(id -u) \
+#     -e PGID=$(id -g) \
+#     -p 8070:80 \
+#     -d \
+#     filebrowser/filebrowser:s6
