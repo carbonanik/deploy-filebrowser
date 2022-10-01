@@ -11,7 +11,7 @@ services:
         restart: always
         networks:
             - behind-nginx
-        container_name: filebrowser2
+        container_name: filebrowser
 
 networks:
     behind-nginx:
