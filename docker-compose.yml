@@ -6,9 +6,9 @@ services:
         # user: "${UID}:${GID}"
         ports:
             - 8070:80
-        environment:
-            - PUID=$$(id -u)
-            - PGID=$$(id -g)
+        # environment:
+        #     - PUID=$$(id -u)
+        #     - PGID=$$(id -g)
         volumes:
             - /:/srv
             - /data/filebrowser/database:/database/
