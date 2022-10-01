@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    filebrowser:
+        image: filebrowser/filebrowser
+        user: "${UID}:${GID}"
+        ports:
+            - 8585:80
+        volumes:
+            - /:/srv
+        restart: always
+        networks:
+            - behind-nginx
+        container_name: filebrowser2
+
+networks:
+    behind-nginx:
+        external:
+            name: behind-nginx-network
